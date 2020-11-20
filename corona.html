@@ -1,0 +1,65 @@
+<html> 
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="corona.css">
+</head>
+<body>
+	<nav>
+		<label class="logo">Covid-19 Live Updates Of The World</label>
+	</nav>
+	<div class="global">
+	<table width="500px" border="1px" cellpadding="8px" cellspacing="0">
+		<tr><td colspan="2"><h2>Global Data</h2></td></tr>
+		<tbody id="global-wise"></tbody>
+	</table></div><br>
+	<div class="country">
+	<table width="60%" border="1px" cellpadding="8px" cellspacing="0">
+		<tr><td colspan="9"><h2>Countries Data</h2></td></tr>
+		<tr>
+			<th>S.NO</th>
+			<th>Country</th>
+			<th>NewConfirmed</th>
+			<th>NewDeaths</th>
+			<th>NewRecovered</th>
+			<th>TotalConfirmed</th>
+			<th>TotalDeaths</th>
+			
+			<th>TotalRecovered</th>
+		</tr>
+		<tbody id="country-wise"></tbody>
+	</table></div>
+	<script type="text/javascript" src="corona.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			url : "https://api.covid19api.com/summary",
+			type : "GET",
+			dataType : "JSON",
+			success : function(data){
+				console.log(data);
+				console.log(data.Countries);
+				$.each(data.Global, function(key, value){
+					
+					$("#global-wise").append("<tr><td bgcolor='coral'>" + key +"</td><td bgcolor='#FFFF66'>"+ value +"</td></tr>")
+				});
+				var sno = 1;
+				$.each(data.Countries, function(key, value){
+					
+					$("#country-wise").append("<tr>"+
+						                      "<td bdcolor='#FFFF66'>" + sno +"</td>"+
+						                      "<td bgcolor='#DA70D6'>" + value.Country+"</td>"+
+						                      "<td bgcolor='#9ACD32'>" + value.NewConfirmed +"</td>"+
+						                      "<td bgcolor='coral'>" + value.NewDeaths +"</td>"+
+						                      "<td bgcolor='#9ACD32'>" + value.NewRecovered +"</td>"+
+						                      "<td bgcolor='#00BFFF'>" + value.TotalConfirmed+"</td>"+
+						                      "<td bgcolor='coral'>" + value.TotalDeaths +"</td>"+
+						                      "<td bgcolor='#00BFFF'>" + value.TotalRecovered +"</td>"+
+						                      "</tr>");
+					sno++;
+				});
+
+				}
+
+		});
+	</script>
+</body>
+</html>

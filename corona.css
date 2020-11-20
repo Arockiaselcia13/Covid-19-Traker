@@ -1,0 +1,73 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+.global{
+	padding: 10px;
+	float:left;
+	margin-left:35%;
+	margin-top:3%;
+}
+.global h2{
+	text-align:center;
+	
+	margin:10px;
+}
+	table .global {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th .global {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  width:200px;
+  text-align:center;
+
+}
+nav{
+	background: #0082e6;
+	height:80px;
+	width:100%;
+	text-align:center;
+}
+label.logo{
+	color:white;
+
+	font-size:40px;
+	line-height:80px;
+	padding: 0 100px;
+	font-weight:bold;
+
+}
+.country{
+	padding: 10px;
+	float:left;
+	margin-left:26%;
+	margin-top:3%;
+}
+.country h2{
+	text-align:center;
+	
+	margin:10px;
+}
+	table .country{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th .country{
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+  width:200px;
+  text-align:center;
+
+}
+ th .country{
+ 	padding-top:10px;
+ 	padding-bottom:10px;
+ }
